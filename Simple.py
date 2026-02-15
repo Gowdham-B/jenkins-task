@@ -11,4 +11,4 @@ num2 = int(input("Enter second number: "))
 sum_result = add_numbers(num1, num2)
 
 # Output
-print("The sum of the two numbers is:", sum_result)
+print("The sum is:", sum_result)
