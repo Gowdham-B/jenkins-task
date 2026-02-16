@@ -2,22 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Code fetched from GitHub'
-            }
-        }
-
         stage('Build') {
             steps {
-                echo 'Building project from Git'
+                echo 'Building project...'
             }
         }
+    }
 
-        stage('Test') {
-            steps {
-                echo 'Testing project from Git'
-            }
+    post {
+        success {
+            echo 'Build was Successful!'
+        }
+        failure {
+            echo 'Build Failed!'
         }
     }
 }
