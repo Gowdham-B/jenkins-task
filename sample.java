@@ -1,5 +1,5 @@
 class sample {
     public static void main(String args[]) {
-        System.out.println("Hello from Jenkins Java Build");
+        System.out.println("CI Trigger Test");
     }
 }
