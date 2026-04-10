@@ -1,0 +1,104 @@
+Started by user Gowdham
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\CICD
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Clone Repository)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\CICD\.git # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe config remote.origin.url https://github.com/Gowdham-B/agilelabmidtermprac.git # timeout=10
+Fetching upstream changes from https://github.com/Gowdham-B/agilelabmidtermprac.git
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe --version # timeout=10
+ > git --version # 'git version 2.52.0.windows.1'
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe fetch --tags --force --progress -- https://github.com/Gowdham-B/agilelabmidtermprac.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision e40a7d9bb663c6ef21b221d79670bc47ca129afa (refs/remotes/origin/main)
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe checkout -f e40a7d9bb663c6ef21b221d79670bc47ca129afa # timeout=10
+ERROR: Checkout failed
+hudson.plugins.git.GitException: Command "C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe checkout -f e40a7d9bb663c6ef21b221d79670bc47ca129afa" returned status code -1073740791:
+stdout: 
+stderr: 
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2848)
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl$9.execute(CliGitAPIImpl.java:3160)
+Caused: hudson.plugins.git.GitException: Could not checkout main with start point e40a7d9bb663c6ef21b221d79670bc47ca129afa
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl$9.execute(CliGitAPIImpl.java:3204)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM._checkout(GitSCM.java:1360)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.checkout(GitSCM.java:1277)
+Caused: java.io.IOException
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.checkout(GitSCM.java:1279)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep.checkout(SCMStep.java:136)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:101)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:88)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:49)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+ERROR: Maximum checkout retry attempts reached, aborting
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Run Tests)
+Stage "Build & Run Tests" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Package Application)
+Stage "Package Application" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Docker Image)
+Stage "Build Docker Image" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push to DockerHub)
+Stage "Push to DockerHub" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Kubernetes)
+Stage "Deploy to Kubernetes" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+hudson.plugins.git.GitException: Command "C:\Users\batch1.VITUNIVERSITY\AppData\Local\Programs\Git\cmd\git.exe checkout -f e40a7d9bb663c6ef21b221d79670bc47ca129afa" returned status code -1073740791:
+stdout: 
+stderr: 
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2848)
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl$9.execute(CliGitAPIImpl.java:3160)
+Caused: hudson.plugins.git.GitException: Could not checkout main with start point e40a7d9bb663c6ef21b221d79670bc47ca129afa
+	at PluginClassLoader for git-client//org.jenkinsci.plugins.gitclient.CliGitAPIImpl$9.execute(CliGitAPIImpl.java:3204)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM._checkout(GitSCM.java:1360)
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.checkout(GitSCM.java:1277)
+Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 152d5257-50df-4c2d-8481-bda9ec1e40de
+Caused: java.io.IOException
+	at PluginClassLoader for git//hudson.plugins.git.GitSCM.checkout(GitSCM.java:1279)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep.checkout(SCMStep.java:136)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:101)
+	at PluginClassLoader for workflow-scm-step//org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:88)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:49)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Finished: FAILURE
